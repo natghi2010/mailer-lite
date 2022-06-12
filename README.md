@@ -14,4 +14,8 @@ The deployment of this project is pretty standard. In order to deploy the Mailer
 - PHP 7.4
 - Node 17 and above
 
+```installation commands
+composer install
+
+
 
