@@ -14,8 +14,14 @@ The deployment of this project is pretty standard. In order to deploy the Mailer
 - PHP 7.4
 - Node 17 and above
 
-```installation commands
+```Laravel installation
 composer install
+
+```
+npm install && npm run dev
+
+
+php artisan migrate:fresh --seed
 
 
 
