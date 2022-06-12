@@ -27,10 +27,11 @@ I have included a compiled js file but you can rebuild it using the following co
 npm install && npm run prod
 ```
 ## Database Migration
-Database migration is pretty standard
+Database migration is pretty standard. Rename .env.dev to .env, create the host database and run the following command:
 ```
 php artisan migrate:fresh --seed
 ```
+
 
 
 
