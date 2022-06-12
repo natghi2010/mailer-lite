@@ -171,8 +171,8 @@ export default {
 
       M.toast({
         html:
-          errors["list"] != undefined ? errors["list"][0] : "Subscriber added!",
-        classes: hasErrors ? "red" : "green",
+          errors["list"].length > 0 ? errors["list"][0] : "Subscriber added!",
+        classes: errors["list"].length > 0 ? "red" : "green",
       });
     };
 

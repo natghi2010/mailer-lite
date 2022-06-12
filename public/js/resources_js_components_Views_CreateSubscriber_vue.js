@@ -78,8 +78,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 console.log("errors", errors["list"]);
                 hasErrors = errors["list"] != undefined;
                 materialize_css__WEBPACK_IMPORTED_MODULE_0___default().toast({
-                  html: errors["list"] != undefined ? errors["list"][0] : "Subscriber added!",
-                  classes: hasErrors ? "red" : "green"
+                  html: errors["list"].length > 0 ? errors["list"][0] : "Subscriber added!",
+                  classes: errors["list"].length > 0 ? "red" : "green"
                 });
 
               case 5:
