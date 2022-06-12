@@ -14,14 +14,19 @@ The deployment of this project is pretty standard. In order to deploy the Mailer
 - PHP 7.4
 - Node 17 and above
 
+## Laravel Installation
 ```Laravel installation
-composer install
-
+   composer install
 ```
-npm install && npm run dev
-
-
+## Vue Installation
+I have included a compiled js file but you can rebuild it using the following file.
+```
+npm install && npm run prod
+```
+## Database Migration
+```
 php artisan migrate:fresh --seed
+```
 
 
 
