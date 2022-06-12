@@ -7,6 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## About the project
+The project is created with Laravel 8.65 with Vue 3 acting as the front end api manager using the composition API. The front UI I have used Materialize CSS. Testing is performed on sqlite(in memory). 
+
 ## Deploying to Local Enviroment
 
 The deployment of this project is pretty standard. In order to deploy the Mailer Lite Api Manager you will need the following
@@ -19,11 +22,12 @@ The deployment of this project is pretty standard. In order to deploy the Mailer
    composer install
 ```
 ## Vue Installation
-I have included a compiled js file but you can rebuild it using the following file.
+I have included a compiled js file but you can rebuild it using the following command.
 ```
 npm install && npm run prod
 ```
 ## Database Migration
+Database migration is pretty standard
 ```
 php artisan migrate:fresh --seed
 ```
