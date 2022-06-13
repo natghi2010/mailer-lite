@@ -413,17 +413,18 @@ function useSubscribers() {
           switch (_context7.prev = _context7.next) {
             case 0:
               errors["list"] = [];
-              _context7.prev = 1;
-              _context7.next = 4;
+              console.log(id, data);
+              _context7.prev = 2;
+              _context7.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().put('/api/v1/subscribers/' + id, data);
 
-            case 4:
-              _context7.next = 9;
+            case 5:
+              _context7.next = 10;
               break;
 
-            case 6:
-              _context7.prev = 6;
-              _context7.t0 = _context7["catch"](1);
+            case 7:
+              _context7.prev = 7;
+              _context7.t0 = _context7["catch"](2);
 
               if (_context7.t0.response.status === 422) {
                 for (key in _context7.t0.response.data.errors) {
@@ -433,12 +434,12 @@ function useSubscribers() {
                 errors["list"].push("Something went wrong. Please try again later.");
               }
 
-            case 9:
+            case 10:
             case "end":
               return _context7.stop();
           }
         }
-      }, _callee7, null, [[1, 6]]);
+      }, _callee7, null, [[2, 7]]);
     }));
 
     return function updateSubscriber(_x6, _x7) {

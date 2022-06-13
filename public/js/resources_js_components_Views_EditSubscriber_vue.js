@@ -70,16 +70,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return updateSubscriber(subscriber);
+                return updateSubscriber(subscriber.id, subscriber);
 
               case 2:
-                console.log(errors);
                 materialize_css__WEBPACK_IMPORTED_MODULE_0___default().toast({
                   html: errors["list"].length > 0 ? errors["list"][0] : "Subscriber Updated!",
                   classes: "green"
                 });
 
-              case 4:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -270,22 +269,25 @@ var _hoisted_22 = {
   "class": "input-field col s4"
 };
 var _hoisted_23 = ["onUpdate:modelValue"];
+var _hoisted_24 = ["selected"];
+var _hoisted_25 = ["selected"];
+var _hoisted_26 = ["selected"];
+var _hoisted_27 = ["selected"];
+var _hoisted_28 = ["selected"];
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<option value=\"\" disabled selected data-v-b3a5c944>Choose your field type</option><option value=\"date\" data-v-b3a5c944>Date</option><option value=\"number\" data-v-b3a5c944>Number</option><option value=\"string\" data-v-b3a5c944>String</option><option value=\"boolean\" data-v-b3a5c944>Boolean</option>", 5);
-
-var _hoisted_29 = [_hoisted_24];
-
-var _hoisted_30 = /*#__PURE__*/_withScopeId(function () {
-  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Select Field", -1
+var _hoisted_29 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
+    "class": "active"
+  }, "Select Field", -1
   /* HOISTED */
   );
 });
 
-var _hoisted_31 = {
+var _hoisted_30 = {
   "class": "input-field col s2"
 };
-var _hoisted_32 = ["onClick"];
-var _hoisted_33 = {
+var _hoisted_31 = ["onClick"];
+var _hoisted_32 = {
   align: "center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
@@ -391,19 +393,46 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, null, 8
     /* PROPS */
     , _hoisted_20), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, field.title]]), _hoisted_21]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("select", {
+      "class": "browser-default",
       "onUpdate:modelValue": function onUpdateModelValue($event) {
         return field.type = $event;
       }
-    }, _hoisted_29, 8
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+      value: "",
+      disabled: "",
+      selected: field.type == ''
+    }, "Choose your field type", 8
     /* PROPS */
-    , _hoisted_23), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, field.type]]), _hoisted_30]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Check if its the last loop "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    , _hoisted_24), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+      value: "date",
+      selected: field.type == 'date'
+    }, "Date", 8
+    /* PROPS */
+    , _hoisted_25), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+      value: "number",
+      selected: field.type == 'number'
+    }, "Number", 8
+    /* PROPS */
+    , _hoisted_26), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+      value: "string",
+      selected: field.type == 'string'
+    }, "String", 8
+    /* PROPS */
+    , _hoisted_27), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("option", {
+      value: "boolean",
+      selected: field.type == 'boolean'
+    }, "Boolean", 8
+    /* PROPS */
+    , _hoisted_28)], 8
+    /* PROPS */
+    , _hoisted_23), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelSelect, field.type]]), _hoisted_29]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Check if its the last loop "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
         return $setup.remove(field.id);
       }, ["prevent"]),
       "class": "btn red"
     }, "-", 8
     /* PROPS */
-    , _hoisted_32), index == $setup.subscriber.fields.length - 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    , _hoisted_31), index == $setup.subscriber.fields.length - 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
       key: 0,
       onClick: _cache[7] || (_cache[7] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
         return $setup.addMore && $setup.addMore.apply($setup, arguments);
@@ -412,7 +441,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, " + ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_33, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_32, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[8] || (_cache[8] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $setup.update && $setup.update.apply($setup, arguments);
     }, ["prevent"])),
@@ -682,17 +711,18 @@ function useSubscribers() {
           switch (_context7.prev = _context7.next) {
             case 0:
               errors["list"] = [];
-              _context7.prev = 1;
-              _context7.next = 4;
+              console.log(id, data);
+              _context7.prev = 2;
+              _context7.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_1___default().put('/api/v1/subscribers/' + id, data);
 
-            case 4:
-              _context7.next = 9;
+            case 5:
+              _context7.next = 10;
               break;
 
-            case 6:
-              _context7.prev = 6;
-              _context7.t0 = _context7["catch"](1);
+            case 7:
+              _context7.prev = 7;
+              _context7.t0 = _context7["catch"](2);
 
               if (_context7.t0.response.status === 422) {
                 for (key in _context7.t0.response.data.errors) {
@@ -702,12 +732,12 @@ function useSubscribers() {
                 errors["list"].push("Something went wrong. Please try again later.");
               }
 
-            case 9:
+            case 10:
             case "end":
               return _context7.stop();
           }
         }
-      }, _callee7, null, [[1, 6]]);
+      }, _callee7, null, [[2, 7]]);
     }));
 
     return function updateSubscriber(_x6, _x7) {

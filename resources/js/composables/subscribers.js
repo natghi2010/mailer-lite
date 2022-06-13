@@ -61,6 +61,8 @@ export default function useSubscribers() {
 
     const updateSubscriber = async (id,data) => {
         errors["list"] = [];
+
+        console.log(id,data);
         try {
             await axios.put('/api/v1/subscribers/' + id, data);
         } catch (error) {

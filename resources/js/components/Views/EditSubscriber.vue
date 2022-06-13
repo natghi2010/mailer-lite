@@ -103,14 +103,14 @@
           </div>
 
           <div class="input-field col s4">
-            <select v-model="field.type">
-              <option value="" disabled selected>Choose your field type</option>
-              <option value="date">Date</option>
-              <option value="number">Number</option>
-              <option value="string">String</option>
-              <option value="boolean">Boolean</option>
+            <select class="browser-default" v-model="field.type">
+              <option value="" disabled :selected="field.type == ''">Choose your field type</option>
+              <option value="date" :selected="field.type == 'date'">Date</option>
+              <option value="number" :selected="field.type == 'number'">Number</option>
+              <option value="string" :selected="field.type == 'string'">String</option>
+              <option value="boolean" :selected="field.type == 'boolean'">Boolean</option>
             </select>
-            <label>Select Field</label>
+            <label class="active">Select Field</label>
           </div>
           <div class="input-field col s2">
             <!-- Check if its the last loop -->
@@ -179,7 +179,7 @@ export default {
 
     onMounted(() => {
       getSubscriber(props.id);
-      M.AutoInit();
+       M.AutoInit();
     });
 
     const addMore = () => {
@@ -187,9 +187,7 @@ export default {
     };
 
     const update = async () => {
-      await updateSubscriber(subscriber);
-
-      console.log(errors);
+    await updateSubscriber(subscriber.id,subscriber);
 
       M.toast({
         html:

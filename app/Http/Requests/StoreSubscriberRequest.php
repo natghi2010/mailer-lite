@@ -31,7 +31,6 @@ class StoreSubscriberRequest extends FormRequest
         ];
     }
 
-
     public function messages(){
         return  [
             'email.required' => __('validation.required', ['attribute' => 'email']),
